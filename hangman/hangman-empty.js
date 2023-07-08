@@ -23,23 +23,24 @@ function updateWordSpotlight() {
     let wordSpotlightContent = "";
     for (let i = 0; i < currentWord.length; i++) {
         if (guessedLetters.includes(currentWord[i])) {
-            wordSpotlightContent += " " + currentWord[i] + " ";
+            wordSpotlightContent += currentWord[i];
         } else {
             wordSpotlightContent += " _ ";
         }
     }
     document.getElementById("wordSpotlight").innerHTML = wordSpotlightContent;
+
     if (wordSpotlightContent === currentWord) {
         alert("Gratulálok! Megtaláltad a szót!");
         pickWord();
     }
 }
 
-// FELADAT: Készítsd el a szóválasztó függvényt
-function pickWord() {
-    // HINT: Itt kell véletlenszerűen választani egy szót a words tömbből, amit a currentWord változóban tárolunk
-    // Ehhez használhatsz egy véletlenszám-generátort, ami 0 és a words tömb hossza közötti egész számot generál.
-    // Továbbá nullázd le a guessedLetters és wrongGuesses változókat, majd hívd meg a hideHangmanParts és updateWordSpotlight függvényeket
+// FELADAT: Készítsd el a testrészeket elrejtő függvényt
+function hideHangmanParts() {
+    // HINT: Itt kell elrejteni az összes testrészt, amiket a parts tömbben tárolunk
+    // A stílusukat állítsd át a visibility tulajdonságukra, hogy rejtett legyen
+    // Mivel ez egy tömb, így használhatsz egy ciklust, ami végigmegy a tömb elemein
 }
 
 function updateHangmanDrawing() {
